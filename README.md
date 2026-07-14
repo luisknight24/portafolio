@@ -1,32 +1,22 @@
-# React + TypeScript + Vite
+# Portafolio Profesional y Módulo de Detección de Sátira
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Arquitectura frontend desarrollada como portafolio personal y entorno de presentación para proyectos de ingeniería de software, integrando como caso de estudio principal un módulo analítico de detección de sátira en español.
 
-Currently, two official plugins are available:
+## Arquitectura y Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+El sistema está construido sobre una arquitectura SPA (Single Page Application) priorizando el rendimiento, la modularidad y la experiencia de usuario.
 
-## React Compiler
+- **Framework Core**: React 18 con TypeScript para tipado estático estricto y componentes funcionales.
+- **Build System**: Vite, configurado para optimización de dependencias y tiempos de carga reducidos.
+- **Estilos y Maquetación**: CSS Vanilla con enfoque en diseño modular, variables CSS para consistencia de UI, `CSS Grid` y `Flexbox` para layouts asimétricos y responsivos.
+- **Optimización de Activos**: Implementación de formatos `.webp` y políticas de diseño con `object-fit: cover` para garantizar estandarización y eficiencia en la entrega de recursos visuales.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Características Técnicas
 
-## Expanding the Oxlint configuration
+- **Componentización Desacoplada**: La interfaz se divide en módulos independientes (`Cabecera`, `Inicio`, `Proyectos`, `Servicios`, `Contacto`), permitiendo una escalabilidad fluida en la agregación de futuros proyectos.
+- **Gestión de Estado y Modales**: Control de estado local mediante hooks de React (`useState`, `useEffect`) para la interacción asíncrona con la galería de proyectos y visualización estructurada de metadatos.
+- **Integración del Caso de Estudio (Sátira)**: El portafolio expone una arquitectura conceptual que acompaña a un modelo BETO (BERT adaptado al español) con extracción de características lingüísticas mediante spaCy y NLTK. Esto sirve como demostración técnica de la integración entre interfaces web modernas y sistemas backend de PLN (Procesamiento de Lenguaje Natural).
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Entorno y Despliegue
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+El proyecto está diseñado y configurado para un despliegue continuo en infraestructuras Edge (como Vercel), aprovechando el empaquetado optimizado de Vite.

@@ -4,12 +4,12 @@ import imgSatira3 from '../activos/satira3.webp';
 import imgSatira4 from '../activos/satira4.webp';
 import imgSatira5 from '../activos/satira5.webp';
 
-import imgOdontologico1 from '../activos/odontologico1.png';
-import imgOdontologico2 from '../activos/odontologico2.png';
-import imgOdontologico3 from '../activos/odontologico3.png';
-import imgOdontologico4 from '../activos/odontologico4.png';
-import imgOdontologico5 from '../activos/odontologico5.png';
-import imgOdontologico6 from '../activos/odontologico6.png';
+import imgOdontologico1 from '../activos/odontologico1.webp';
+import imgOdontologico2 from '../activos/odontologico2.webp';
+import imgOdontologico3 from '../activos/odontologico3.webp';
+import imgOdontologico4 from '../activos/odontologico4.webp';
+import imgOdontologico5 from '../activos/odontologico5.webp';
+import imgOdontologico6 from '../activos/odontologico6.webp';
 
 export const informacionPersonal = {
   nombre: "Luis Balladares",

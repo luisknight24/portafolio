@@ -4,6 +4,13 @@ import imgSatira3 from '../activos/satira3.webp';
 import imgSatira4 from '../activos/satira4.webp';
 import imgSatira5 from '../activos/satira5.webp';
 
+import imgOdontologico1 from '../activos/odontologico1.png';
+import imgOdontologico2 from '../activos/odontologico2.png';
+import imgOdontologico3 from '../activos/odontologico3.png';
+import imgOdontologico4 from '../activos/odontologico4.png';
+import imgOdontologico5 from '../activos/odontologico5.png';
+import imgOdontologico6 from '../activos/odontologico6.png';
+
 export const informacionPersonal = {
   nombre: "Luis Balladares",
   cargo: "Ingeniero en Software",
@@ -65,6 +72,21 @@ export const proyectos = [
       imgSatira3,
       imgSatira4,
       imgSatira5
+    ]
+  },
+  {
+    id: 2,
+    titulo: "DentAgend: Administración de reservaciones odontológicas",
+    descripcion: "Sistema integrado para la administración de reservaciones y fichas clínicas en consultorios odontológicos. Proporciona un espacio de trabajo unificado donde pacientes, odontólogos y administradores interactúan en tiempo real. Backend estructurado como API RESTful con C# y frontend dinámico en Angular.",
+    tecnologias: [".NET 6", "Angular 15", "C#", "SQL Server", "JWT", "EF Core"],
+    enlaces: { codigo: "https://github.com/luisknight24/SistemaOdontologico", demo: "https://sistema-odontologico-seven.vercel.app/" },
+    imagen: imgOdontologico1,
+    galeria: [
+      imgOdontologico2,
+      imgOdontologico3,
+      imgOdontologico4,
+      imgOdontologico5,
+      imgOdontologico6
     ]
   }
 ];

@@ -77,7 +77,13 @@ export const proyectos = [
   {
     id: 2,
     titulo: "DentAgend: Administración de reservaciones odontológicas",
-    descripcion: "Sistema integrado para la administración de reservaciones y fichas clínicas en consultorios odontológicos. Proporciona un espacio de trabajo unificado donde pacientes, odontólogos y administradores interactúan en tiempo real. Backend estructurado como API RESTful con C# y frontend dinámico en Angular.",
+    descripcion: `Sistema integrado para la administración de reservaciones y fichas clínicas en consultorios odontológicos. Proporciona un espacio de trabajo unificado donde pacientes, odontólogos y administradores interactúan en tiempo real. Backend estructurado como API RESTful con C# y frontend dinámico en Angular.
+
+Nota: También puedes crear una cuenta registrando un correo nuevo, en donde, se enviará un código de verificación (OTP) a la dirección de correo registrada.`,
+    credenciales: {
+      correo: "paciente@gmail.com",
+      contrasena: "123456"
+    },
     tecnologias: [".NET 6", "Angular 15", "C#", "SQL Server", "JWT", "EF Core"],
     enlaces: { codigo: "https://github.com/luisknight24/SistemaOdontologico", demo: "https://sistema-odontologico-seven.vercel.app/" },
     imagen: imgOdontologico1,

@@ -637,6 +637,7 @@ a:hover {
 
 .modal-info h2 {
   font-size: 2.5rem;
+  line-height: 1.2;
   margin-bottom: 1rem;
   margin-top: 0;
 }
@@ -646,6 +647,8 @@ a:hover {
   line-height: 1.8;
   margin-bottom: 2.5rem;
   color: var(--color-texto-secundario);
+  white-space: pre-line;
+  text-align: left;
 }
 
 .modal-tecnologias-contenedor {
@@ -691,9 +694,39 @@ a:hover {
   transform: translateY(-2px);
 }
 
+.modal-credenciales-contenedor {
+  padding: 0 2rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+
+.modal-credenciales-contenedor .modal-subtitulo {
+  margin-bottom: 0.5rem;
+}
+
+.modal-credenciales {
+  color: var(--color-texto-secundario);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.modal-credenciales p {
+  margin-bottom: 0rem;
+  text-align: left;
+}
+
+.modal-credenciales strong {
+  color: var(--color-texto-principal);
+}
+
 .modal-acciones {
   display: flex;
   gap: 1rem;
+}
+
+.modal-acciones .boton {
+  padding: 0.65rem 1.5rem;
+  font-size: 0.95rem;
 }
 
 .contacto {

@@ -76,11 +76,25 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
                 ))}
               </div>
             </div>
+
+            {proyecto.credenciales && (
+              <div className="modal-credenciales-contenedor">
+                <h3 className="modal-subtitulo">Credenciales para acceso de prueba</h3>
+                <div className="modal-credenciales">
+                  <p><strong>Correo:</strong> {proyecto.credenciales.correo}</p>
+                  <p><strong>Contraseña:</strong> {proyecto.credenciales.contrasena}</p>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="modal-info">
             <h2>{proyecto.titulo}</h2>
-            <p>{proyecto.descripcion}</p>
+            <div className="modal-descripcion-contenedor">
+              {proyecto.descripcion.split('\n\n').map((parrafo: string, i: number) => (
+                <p key={i} style={{ marginBottom: '1rem' }}>{parrafo}</p>
+              ))}
+            </div>
 
             <div className="modal-acciones">
               {proyecto.enlaces.codigo && (

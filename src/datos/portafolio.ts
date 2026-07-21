@@ -11,11 +11,11 @@ import imgOdontologico4 from '../activos/odontologico4.webp';
 import imgOdontologico5 from '../activos/odontologico5.webp';
 import imgOdontologico6 from '../activos/odontologico6.webp';
 
-import imgRepositorio1 from '../activos/repositorio1.png';
-import imgRepositorio3 from '../activos/repositorio3.png';
-import imgRepositorio4 from '../activos/repositorio4.png';
-import imgRepositorio5 from '../activos/repositorio5.png';
-import imgRepositorio6 from '../activos/repositorio6.png';
+import imgRepositorio1 from '../activos/repositorio1.webp';
+import imgRepositorio3 from '../activos/repositorio3.webp';
+import imgRepositorio4 from '../activos/repositorio4.webp';
+import imgRepositorio5 from '../activos/repositorio5.webp';
+import imgRepositorio6 from '../activos/repositorio6.webp';
 
 export const informacionPersonal = {
   nombre: "Luis Balladares",

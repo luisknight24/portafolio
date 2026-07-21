@@ -11,6 +11,12 @@ import imgOdontologico4 from '../activos/odontologico4.webp';
 import imgOdontologico5 from '../activos/odontologico5.webp';
 import imgOdontologico6 from '../activos/odontologico6.webp';
 
+import imgRepositorio1 from '../activos/repositorio1.png';
+import imgRepositorio3 from '../activos/repositorio3.png';
+import imgRepositorio4 from '../activos/repositorio4.png';
+import imgRepositorio5 from '../activos/repositorio5.png';
+import imgRepositorio6 from '../activos/repositorio6.png';
+
 export const informacionPersonal = {
   nombre: "Luis Balladares",
   cargo: "Ingeniero en Software",
@@ -93,6 +99,22 @@ Nota: También puedes crear una cuenta registrando un correo nuevo, en donde, se
       imgOdontologico4,
       imgOdontologico5,
       imgOdontologico6
+    ]
+  },
+  {
+    id: 3,
+    titulo: "Repositorio Digital Multidisciplinario",
+    descripcion: `Plataforma web para la gestión, búsqueda y visualización de producción académica y científica. Arquitectura frontend modular estructurada en Angular y respaldada por servicios RESTful seguros.
+
+Las métricas globales y descripciones son renderizadas dinámicamente desde la nube. La plataforma también permite crear una cuenta para la publicación de proyectos, integrando un proceso de validación seguro mediante código OTP enviado al correo.`,
+    tecnologias: ["Angular 16+", "TypeScript", "JWT", "Azure", "C#"],
+    enlaces: { codigo: "https://github.com/luisknight24/repositorio2024", demo: "https://repositorio2024.vercel.app/" },
+    imagen: imgRepositorio1,
+    galeria: [
+      imgRepositorio3,
+      imgRepositorio4,
+      imgRepositorio5,
+      imgRepositorio6
     ]
   }
 ];

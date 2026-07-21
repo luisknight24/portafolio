@@ -648,7 +648,7 @@ a:hover {
   margin-bottom: 2.5rem;
   color: var(--color-texto-secundario);
   white-space: pre-line;
-  text-align: left;
+  text-align: justify;
 }
 
 .modal-tecnologias-contenedor {

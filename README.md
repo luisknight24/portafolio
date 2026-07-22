@@ -15,7 +15,6 @@ El sistema está construido sobre una arquitectura SPA (Single Page Application)
 
 - **Componentización Desacoplada**: La interfaz se divide en módulos independientes (`Cabecera`, `Inicio`, `Proyectos`, `Servicios`, `Contacto`), permitiendo una escalabilidad fluida en la agregación de futuros proyectos.
 - **Gestión de Estado y Modales**: Control de estado local mediante hooks de React (`useState`, `useEffect`) para la interacción asíncrona con la galería de proyectos y visualización estructurada de metadatos.
-- **Integración del Caso de Estudio (Sátira)**: El portafolio expone una arquitectura conceptual que acompaña a un modelo BETO (BERT adaptado al español) con extracción de características lingüísticas mediante spaCy y NLTK. Esto sirve como demostración técnica de la integración entre interfaces web modernas y sistemas backend de PLN (Procesamiento de Lenguaje Natural).
 
 ## Entorno y Despliegue
 

@@ -32,7 +32,7 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
         onClick={cerrarModal}
       >
         <motion.div
-          className="modal-contenido"
+          className={`modal-contenido ${proyecto.tipo === 'movil' ? 'modal-movil' : ''}`}
           initial={{ y: 50, opacity: 0, scale: 0.95 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 20, opacity: 0, scale: 0.95 }}
@@ -68,14 +68,16 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
               </div>
             </div>
 
-            <div className="modal-tecnologias-contenedor">
-              <h3 className="modal-subtitulo">Tecnologías utilizadas</h3>
-              <div className="modal-tecnologias">
-                {proyecto.tecnologias.map((tec: string, index: number) => (
-                  <span key={index} className="modal-etiqueta">{tec}</span>
-                ))}
+            {proyecto.tipo !== 'movil' && (
+              <div className="modal-tecnologias-contenedor">
+                <h3 className="modal-subtitulo">Tecnologías utilizadas</h3>
+                <div className="modal-tecnologias">
+                  {proyecto.tecnologias.map((tec: string, index: number) => (
+                    <span key={index} className="modal-etiqueta">{tec}</span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {proyecto.credenciales && (
               <div className="modal-credenciales-contenedor">
@@ -108,6 +110,17 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
                 </a>
               )}
             </div>
+
+            {proyecto.tipo === 'movil' && (
+              <div className="modal-tecnologias-contenedor" style={{ marginTop: '2rem' }}>
+                <h3 className="modal-subtitulo">Tecnologías utilizadas</h3>
+                <div className="modal-tecnologias">
+                  {proyecto.tecnologias.map((tec: string, index: number) => (
+                    <span key={index} className="modal-etiqueta">{tec}</span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
       </motion.div>

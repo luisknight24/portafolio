@@ -17,6 +17,17 @@ import imgRepositorio4 from '../activos/repositorio4.webp';
 import imgRepositorio5 from '../activos/repositorio5.webp';
 import imgRepositorio6 from '../activos/repositorio6.webp';
 
+import imgTic1 from '../activos/tic1.png';
+import imgTic2 from '../activos/tic2.png';
+import imgTic3 from '../activos/tic3.png';
+import imgTic4 from '../activos/tic4.png';
+import imgTic5 from '../activos/tic5.png';
+import imgTic6 from '../activos/tic6.png';
+import imgTic7 from '../activos/tic7.png';
+import imgTic8 from '../activos/tic8.png';
+import imgTic9 from '../activos/tic9.png';
+import imgTic10 from '../activos/tic10.png';
+
 export const informacionPersonal = {
   nombre: "Luis Balladares",
   cargo: "Ingeniero en Software",
@@ -115,6 +126,28 @@ Las métricas globales y descripciones son renderizadas dinámicamente desde la 
       imgRepositorio4,
       imgRepositorio5,
       imgRepositorio6
+    ]
+  },
+  {
+    id: 4,
+    titulo: "Tics en la literatura",
+    tipo: "movil",
+    descripcion: `Aplicación móvil educativa y gamificada estructurada en Flutter, diseñada para fomentar el aprendizaje de la literatura universal e hispanoamericana. La plataforma proporciona un entorno inmersivo donde los usuarios pueden repasar obras clásicas utilizando diversos minijuegos interactivos.
+
+El sistema emplea una arquitectura modular orientada a componentes, separando estrictamente la lógica de los juegos, la gestión del estado y la interfaz de usuario, lo que garantiza un rendimiento nativo y fluido en dispositivos móviles.`,
+    tecnologias: ["Flutter", "Dart", "Android", "SharedPreferences", "Figma"],
+    enlaces: { codigo: "https://github.com/luisknight24/AppUsoTic", demo: "https://luisknight24.github.io/AppUsoTic/" },
+    imagen: imgTic1,
+    galeria: [
+      imgTic2,
+      imgTic3,
+      imgTic4,
+      imgTic5,
+      imgTic6,
+      imgTic7,
+      imgTic8,
+      imgTic9,
+      imgTic10
     ]
   }
 ];

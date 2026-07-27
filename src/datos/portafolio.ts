@@ -28,6 +28,25 @@ import imgTic8 from '../activos/tic8.png';
 import imgTic9 from '../activos/tic9.png';
 import imgTic10 from '../activos/tic10.png';
 
+import imgCreditoMovil1 from '../activos/credito_movil1.png';
+import imgCreditoMovil2 from '../activos/credito_movil2.png';
+import imgCreditoMovil3 from '../activos/credito_movil3.png';
+import imgCreditoMovil4 from '../activos/credito_movil4.png';
+import imgCreditoMovil5 from '../activos/credito_movil5.png';
+import imgCreditoMovil6 from '../activos/credito_movil6.png';
+import imgCreditoMovil7 from '../activos/credito_movil7.png';
+import imgCreditoMovil8 from '../activos/credito_movil8.png';
+
+import imgCreditoWeb1 from '../activos/credito_web1.png';
+import imgCreditoWeb2 from '../activos/credito_web2.png';
+import imgCreditoWeb3 from '../activos/credito_web3.png';
+import imgCreditoWeb4 from '../activos/credito_web4.png';
+import imgCreditoWeb5 from '../activos/credito_web5.png';
+import imgCreditoWeb6 from '../activos/credito_web6.png';
+import imgCreditoWeb7 from '../activos/credito_web7.png';
+import imgCreditoWeb8 from '../activos/credito_web8.png';
+import imgCreditoWebCover from '../activos/credito_web.png';
+
 export const informacionPersonal = {
   nombre: "Luis Balladares",
   cargo: "Ingeniero en Software",
@@ -149,6 +168,63 @@ El sistema emplea una arquitectura modular orientada a componentes, separando es
       imgTic9,
       imgTic10
     ]
+  },
+  {
+    id: 5,
+    titulo: "Gestión de créditos y comercio",
+    tipo: "hibrido",
+    descripcion: `Ecosistema distribuido para la administración descentralizada de solicitudes de crédito, verificación de identidad en dos pasos, seguimiento de cobranza en tiempo real y gestión logística de inventarios. La plataforma sincroniza de forma bidireccional las operaciones del cliente móvil con el panel web administrativo mediante servicios RESTful en la nube e integración de sockets.`,
+    tecnologias: [".NET 8", "Angular 18", "Flutter 3.x", "PostgreSQL", "SignalR", "Render", "Brevo SMTP", "Docker", "TypeScript", "EF Core 8", "BCrypt"],
+    enlaces: { codigo: "https://github.com/luisknight24/GestionCreditos-Completo", demo: "https://luisknight24.github.io/GestionCreditos-Completo/" },
+    imagen: imgCreditoWebCover,
+    galeria: [
+      imgCreditoWeb1,
+      imgCreditoWeb2,
+      imgCreditoWeb3,
+      imgCreditoWeb4,
+      imgCreditoWeb5,
+      imgCreditoWeb6,
+      imgCreditoWeb7,
+      imgCreditoWeb8
+    ],
+    vistas: {
+      web: {
+        titulo: "Panel Administrativo Web",
+        descripcion: `Plataforma web desarrollada en Angular 18 orientada a administradores y encargados de tienda para la gestión integral de créditos, monitoreo de cobranzas, control de bodegas y traslados de inventario.
+
+El sistema se conecta con la API RESTful en .NET 8 y procesa eventos en tiempo real mediante SignalR. Al aprobar una solicitud o registrar un abono desde el dashboard, la información se persiste en PostgreSQL (Neon DB) y refresca al instante el saldo visible en la aplicación móvil del cliente.`,
+        tecnologias: ["Angular 18", "TypeScript", ".NET 8", "PostgreSQL", "SignalR", "Render", "Docker"],
+        enlaces: { codigo: "https://github.com/luisknight24/GestionCreditos-Completo", demo: "https://luisknight24.github.io/GestionCreditos-Completo/" },
+        galeria: [
+          imgCreditoWeb1,
+          imgCreditoWeb2,
+          imgCreditoWeb3,
+          imgCreditoWeb4,
+          imgCreditoWeb5,
+          imgCreditoWeb6,
+          imgCreditoWeb7,
+          imgCreditoWeb8
+        ]
+      },
+      movil: {
+        titulo: "Aplicación Móvil para Clientes",
+        descripcion: `Aplicación móvil desarrollada en Flutter orientada a clientes finales para la consulta de estado de créditos, historial de cuotas y registro de abonos. Incluye un flujo de registro multipaso con validación de identidad en dos pasos mediante código OTP enviado por correo electrónico.
+
+Cada pago o solicitud registrada desde la aplicación emite una notificación transaccional procesada por la API en la nube, actualizando inmediatamente el estado de cobranza en el panel web administrativo sin necesidad de recargar la página.`,
+        tecnologias: ["Flutter 3.x", "Dart", "Android", "Brevo SMTP", ".NET 8", "SignalR"],
+        enlaces: { codigo: "https://github.com/luisknight24/GestionCreditos-Completo", demo: "https://luisknight24.github.io/GestionCreditos-Completo/" },
+        galeria: [
+          imgCreditoMovil1,
+          imgCreditoMovil2,
+          imgCreditoMovil3,
+          imgCreditoMovil4,
+          imgCreditoMovil5,
+          imgCreditoMovil6,
+          imgCreditoMovil7,
+          imgCreditoMovil8
+        ]
+      }
+    }
   }
 ];
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Code, ExternalLink } from 'lucide-react';
+import { X, Code, ExternalLink, Monitor, Smartphone } from 'lucide-react';
 
 interface ModalProyectoProps {
   proyecto: any;
@@ -8,18 +8,33 @@ interface ModalProyectoProps {
 }
 
 export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarModal }) => {
+  const [vistaActiva, setVistaActiva] = useState<'web' | 'movil'>(
+    proyecto.tipo === 'hibrido' && proyecto.vistas?.web ? 'web' : (proyecto.tipo === 'movil' ? 'movil' : 'web')
+  );
   const [indiceImagen, setIndiceImagen] = useState(0);
 
+  const esHibrido = proyecto.tipo === 'hibrido';
+  const esMovil = proyecto.tipo === 'movil' || (esHibrido && vistaActiva === 'movil');
+
+  const datosVista = esHibrido && proyecto.vistas ? proyecto.vistas[vistaActiva] : proyecto;
+  const galeriaActual = datosVista.galeria || proyecto.galeria;
+  const descripcionActual = datosVista.descripcion || proyecto.descripcion;
+  const tecnologiasActuales = datosVista.tecnologias || proyecto.tecnologias;
+  const enlacesActuales = datosVista.enlaces || proyecto.enlaces;
+  const credencialesActuales = datosVista.credenciales || proyecto.credenciales;
+  const tituloActual = esHibrido ? `${proyecto.titulo}` : proyecto.titulo;
+
   useEffect(() => {
-    if (!proyecto.galeria || proyecto.galeria.length === 0) return;
+    if (!galeriaActual || galeriaActual.length === 0) return;
     const intervalo = setInterval(() => {
-      setIndiceImagen((prev) => (prev + 1) % proyecto.galeria.length);
+      setIndiceImagen((prev) => (prev + 1) % galeriaActual.length);
     }, 4000);
     return () => clearInterval(intervalo);
-  }, [proyecto.galeria]);
+  }, [galeriaActual]);
 
-  const irAImagen = (indice: number) => {
-    setIndiceImagen(indice);
+  const cambiarVista = (nuevaVista: 'web' | 'movil') => {
+    setVistaActiva(nuevaVista);
+    setIndiceImagen(0);
   };
 
   return (
@@ -32,7 +47,7 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
         onClick={cerrarModal}
       >
         <motion.div
-          className={`modal-contenido ${proyecto.tipo === 'movil' ? 'modal-movil' : ''}`}
+          className={`modal-contenido ${esMovil ? 'modal-movil' : ''}`}
           initial={{ y: 50, opacity: 0, scale: 0.95 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 20, opacity: 0, scale: 0.95 }}
@@ -47,9 +62,9 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
             <div className="modal-galeria">
               <AnimatePresence mode="wait">
                 <motion.img
-                  key={indiceImagen}
-                  src={proyecto.galeria[indiceImagen]}
-                  alt={`${proyecto.titulo} - vista ${indiceImagen + 1}`}
+                  key={`${vistaActiva}-${indiceImagen}`}
+                  src={galeriaActual[indiceImagen]}
+                  alt={`${tituloActual} - vista ${indiceImagen + 1}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -58,64 +73,83 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
                 />
               </AnimatePresence>
               <div className="modal-indicadores">
-                {proyecto.galeria.map((_: any, i: number) => (
+                {galeriaActual.map((_: any, i: number) => (
                   <button
                     key={i}
                     className={`modal-indicador ${i === indiceImagen ? 'activo' : ''}`}
-                    onClick={() => irAImagen(i)}
+                    onClick={() => setIndiceImagen(i)}
                   />
                 ))}
               </div>
             </div>
 
-            {proyecto.tipo !== 'movil' && (
+            {!esMovil && (
               <div className="modal-tecnologias-contenedor">
                 <h3 className="modal-subtitulo">Tecnologías utilizadas</h3>
                 <div className="modal-tecnologias">
-                  {proyecto.tecnologias.map((tec: string, index: number) => (
+                  {tecnologiasActuales.map((tec: string, index: number) => (
                     <span key={index} className="modal-etiqueta">{tec}</span>
                   ))}
                 </div>
               </div>
             )}
 
-            {proyecto.credenciales && (
+            {credencialesActuales && (
               <div className="modal-credenciales-contenedor">
                 <h3 className="modal-subtitulo">Credenciales para acceso de prueba</h3>
                 <div className="modal-credenciales">
-                  <p><strong>Correo:</strong> {proyecto.credenciales.correo}</p>
-                  <p><strong>Contraseña:</strong> {proyecto.credenciales.contrasena}</p>
+                  <p><strong>Correo:</strong> {credencialesActuales.correo}</p>
+                  <p><strong>Contraseña:</strong> {credencialesActuales.contrasena}</p>
                 </div>
               </div>
             )}
           </div>
 
           <div className="modal-info">
-            <h2>{proyecto.titulo}</h2>
+            <div className="modal-header-derecho">
+              {esHibrido && (
+                <div className="modal-tabs">
+                  <button
+                    className={`modal-tab ${vistaActiva === 'web' ? 'activo' : ''}`}
+                    onClick={() => cambiarVista('web')}
+                  >
+                    <Monitor size={16} /> Sistema web
+                  </button>
+                  <button
+                    className={`modal-tab ${vistaActiva === 'movil' ? 'activo' : ''}`}
+                    onClick={() => cambiarVista('movil')}
+                  >
+                    <Smartphone size={16} /> Aplicación móvil
+                  </button>
+                </div>
+              )}
+            </div>
+
+            <h2>{tituloActual}</h2>
             <div className="modal-descripcion-contenedor">
-              {proyecto.descripcion.split('\n\n').map((parrafo: string, i: number) => (
+              {descripcionActual.split('\n\n').map((parrafo: string, i: number) => (
                 <p key={i} style={{ marginBottom: '1rem' }}>{parrafo}</p>
               ))}
             </div>
 
             <div className="modal-acciones">
-              {proyecto.enlaces.codigo && (
-                <a href={proyecto.enlaces.codigo} target="_blank" rel="noopener noreferrer" className="boton boton-secundario">
+              {enlacesActuales.codigo && (
+                <a href={enlacesActuales.codigo} target="_blank" rel="noopener noreferrer" className="boton boton-secundario">
                   <Code size={18} /> Ver código
                 </a>
               )}
-              {proyecto.enlaces.demo && (
-                <a href={proyecto.enlaces.demo} target="_blank" rel="noopener noreferrer" className="boton boton-primario">
+              {enlacesActuales.demo && (
+                <a href={enlacesActuales.demo} target="_blank" rel="noopener noreferrer" className="boton boton-primario">
                   <ExternalLink size={18} /> Probar ahora
                 </a>
               )}
             </div>
 
-            {proyecto.tipo === 'movil' && (
+            {esMovil && (
               <div className="modal-tecnologias-contenedor" style={{ marginTop: '2rem' }}>
                 <h3 className="modal-subtitulo">Tecnologías utilizadas</h3>
                 <div className="modal-tecnologias">
-                  {proyecto.tecnologias.map((tec: string, index: number) => (
+                  {tecnologiasActuales.map((tec: string, index: number) => (
                     <span key={index} className="modal-etiqueta">{tec}</span>
                   ))}
                 </div>

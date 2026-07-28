@@ -498,6 +498,7 @@ a:hover {
 
 .tarjeta-proyecto-info h3 {
   font-size: 1.5rem;
+  line-height: 1.15;
   margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
@@ -618,24 +619,76 @@ a:hover {
 
 .modal-movil .modal-info .modal-tecnologias-contenedor {
   padding: 0;
-  margin-left: -2rem;
-  margin-right: -2rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.modal-header-derecho {
+/* Columna derecha del modal (envuelve tabs + info) */
+.modal-columna-der {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.modal-columna-der--hibrido .modal-info {
+  padding-top: 0.5rem;
+}
+
+/* Barra de pestañas para proyectos híbridos (pegada al borde superior) */
+.modal-tabs-barra {
+  display: flex;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--borde-tenue);
+  flex-shrink: 0;
+}
+
+.modal-tab-barra {
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 40px;
-  margin-bottom: 1.25rem;
-  padding-right: 3.5rem;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--color-texto-secundario);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-/* Selector de pestañas para proyectos híbridos */
+.modal-tab-barra:first-child {
+  border-right: 1px solid var(--borde-tenue);
+}
+
+.modal-tab-barra:hover {
+  color: var(--color-texto-principal);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.modal-tab-barra.activo {
+  color: var(--color-primario);
+  background: rgba(94, 234, 212, 0.05);
+}
+
+.modal-tab-barra.activo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-primario);
+}
+
+/* Estilo anterior de tabs (se mantiene para otros contextos) */
 .modal-tabs {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
   background: rgba(255, 255, 255, 0.04);
   padding: 0.35rem;
   border-radius: 10px;
@@ -704,22 +757,24 @@ a:hover {
 }
 
 .modal-info {
-  padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+  padding: 1rem 1rem 2.5rem;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .modal-info h2 {
   font-size: 2.5rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.05;
+  margin-bottom: -0.5rem;
   margin-top: 0;
 }
 
 .modal-info p {
   font-size: 1.05rem;
   line-height: 1.8;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   color: var(--color-texto-secundario);
   white-space: pre-line;
   text-align: justify;
@@ -727,7 +782,7 @@ a:hover {
 
 .modal-tecnologias-contenedor {
   padding: 0 2rem;
-  margin-top: -1.5rem;
+  margin-top: -2rem;
 }
 
 .modal-subtitulo {

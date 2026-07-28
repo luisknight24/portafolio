@@ -105,56 +105,56 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
             )}
           </div>
 
-          <div className="modal-info">
-            <div className="modal-header-derecho">
-              {esHibrido && (
-                <div className="modal-tabs">
-                  <button
-                    className={`modal-tab ${vistaActiva === 'web' ? 'activo' : ''}`}
-                    onClick={() => cambiarVista('web')}
-                  >
-                    <Monitor size={16} /> Sistema web
-                  </button>
-                  <button
-                    className={`modal-tab ${vistaActiva === 'movil' ? 'activo' : ''}`}
-                    onClick={() => cambiarVista('movil')}
-                  >
-                    <Smartphone size={16} /> Aplicación móvil
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <h2>{tituloActual}</h2>
-            <div className="modal-descripcion-contenedor">
-              {descripcionActual.split('\n\n').map((parrafo: string, i: number) => (
-                <p key={i} style={{ marginBottom: '1rem' }}>{parrafo}</p>
-              ))}
-            </div>
-
-            <div className="modal-acciones">
-              {enlacesActuales.codigo && (
-                <a href={enlacesActuales.codigo} target="_blank" rel="noopener noreferrer" className="boton boton-secundario">
-                  <Code size={18} /> Ver código
-                </a>
-              )}
-              {enlacesActuales.demo && (
-                <a href={enlacesActuales.demo} target="_blank" rel="noopener noreferrer" className="boton boton-primario">
-                  <ExternalLink size={18} /> Probar ahora
-                </a>
-              )}
-            </div>
-
-            {esMovil && (
-              <div className="modal-tecnologias-contenedor" style={{ marginTop: '2rem' }}>
-                <h3 className="modal-subtitulo">Tecnologías utilizadas</h3>
-                <div className="modal-tecnologias">
-                  {tecnologiasActuales.map((tec: string, index: number) => (
-                    <span key={index} className="modal-etiqueta">{tec}</span>
-                  ))}
-                </div>
+          <div className={`modal-columna-der ${esHibrido ? 'modal-columna-der--hibrido' : ''}`}>
+            {esHibrido && (
+              <div className="modal-tabs-barra">
+                <button
+                  className={`modal-tab-barra ${vistaActiva === 'web' ? 'activo' : ''}`}
+                  onClick={() => cambiarVista('web')}
+                >
+                  <Monitor size={16} /> Sistema web
+                </button>
+                <button
+                  className={`modal-tab-barra ${vistaActiva === 'movil' ? 'activo' : ''}`}
+                  onClick={() => cambiarVista('movil')}
+                >
+                  <Smartphone size={16} /> Aplicación móvil
+                </button>
               </div>
             )}
+
+            <div className="modal-info">
+              <h2>{tituloActual}</h2>
+              <div className="modal-descripcion-contenedor">
+                {descripcionActual.split('\n\n').map((parrafo: string, i: number) => (
+                  <p key={i} style={{ marginBottom: '0.50rem' }}>{parrafo}</p>
+                ))}
+              </div>
+
+              <div className="modal-acciones">
+                {enlacesActuales.codigo && (
+                  <a href={enlacesActuales.codigo} target="_blank" rel="noopener noreferrer" className="boton boton-secundario">
+                    <Code size={18} /> Ver código
+                  </a>
+                )}
+                {enlacesActuales.demo && (
+                  <a href={enlacesActuales.demo} target="_blank" rel="noopener noreferrer" className="boton boton-primario">
+                    <ExternalLink size={18} /> Probar ahora
+                  </a>
+                )}
+              </div>
+
+              {esMovil && (
+                <div className="modal-tecnologias-contenedor" style={{ marginTop: '0.4rem' }}>
+                  <h3 className="modal-subtitulo">Tecnologías utilizadas</h3>
+                  <div className="modal-tecnologias">
+                    {tecnologiasActuales.map((tec: string, index: number) => (
+                      <span key={index} className="modal-etiqueta">{tec}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </motion.div>
       </motion.div>

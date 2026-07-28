@@ -117,8 +117,8 @@ export const proyectos = [
 
 Nota: También puedes crear una cuenta registrando un correo nuevo, en donde, se enviará un código de verificación (OTP) a la dirección de correo registrada.`,
     credenciales: {
-      correo: "paciente@gmail.com",
-      contrasena: "123456"
+      correo: "luisballadares24@gmail.com",
+      contrasena: "SistemaOdont"
     },
     tecnologias: [".NET 6", "Angular 15", "C#", "SQL Server", "JWT", "EF Core"],
     enlaces: { codigo: "https://github.com/luisknight24/SistemaOdontologico", demo: "https://sistema-odontologico-seven.vercel.app/" },

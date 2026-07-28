@@ -17,35 +17,35 @@ import imgRepositorio4 from '../activos/repositorio4.webp';
 import imgRepositorio5 from '../activos/repositorio5.webp';
 import imgRepositorio6 from '../activos/repositorio6.webp';
 
-import imgTic1 from '../activos/tic1.png';
-import imgTic2 from '../activos/tic2.png';
-import imgTic3 from '../activos/tic3.png';
-import imgTic4 from '../activos/tic4.png';
-import imgTic5 from '../activos/tic5.png';
-import imgTic6 from '../activos/tic6.png';
-import imgTic7 from '../activos/tic7.png';
-import imgTic8 from '../activos/tic8.png';
-import imgTic9 from '../activos/tic9.png';
-import imgTic10 from '../activos/tic10.png';
+import imgTic1 from '../activos/tic1.webp';
+import imgTic2 from '../activos/tic2.webp';
+import imgTic3 from '../activos/tic3.webp';
+import imgTic4 from '../activos/tic4.webp';
+import imgTic5 from '../activos/tic5.webp';
+import imgTic6 from '../activos/tic6.webp';
+import imgTic7 from '../activos/tic7.webp';
+import imgTic8 from '../activos/tic8.webp';
+import imgTic9 from '../activos/tic9.webp';
+import imgTic10 from '../activos/tic10.webp';
 
-import imgCreditoMovil1 from '../activos/credito_movil1.png';
-import imgCreditoMovil2 from '../activos/credito_movil2.png';
-import imgCreditoMovil3 from '../activos/credito_movil3.png';
-import imgCreditoMovil4 from '../activos/credito_movil4.png';
-import imgCreditoMovil5 from '../activos/credito_movil5.png';
-import imgCreditoMovil6 from '../activos/credito_movil6.png';
-import imgCreditoMovil7 from '../activos/credito_movil7.png';
-import imgCreditoMovil8 from '../activos/credito_movil8.png';
+import imgCreditoMovil1 from '../activos/credito_movil1.webp';
+import imgCreditoMovil2 from '../activos/credito_movil2.webp';
+import imgCreditoMovil3 from '../activos/credito_movil3.webp';
+import imgCreditoMovil4 from '../activos/credito_movil4.webp';
+import imgCreditoMovil5 from '../activos/credito_movil5.webp';
+import imgCreditoMovil6 from '../activos/credito_movil6.webp';
+import imgCreditoMovil7 from '../activos/credito_movil7.webp';
+import imgCreditoMovil8 from '../activos/credito_movil8.webp';
 
-import imgCreditoWeb1 from '../activos/credito_web1.png';
-import imgCreditoWeb2 from '../activos/credito_web2.png';
-import imgCreditoWeb3 from '../activos/credito_web3.png';
-import imgCreditoWeb4 from '../activos/credito_web4.png';
-import imgCreditoWeb5 from '../activos/credito_web5.png';
-import imgCreditoWeb6 from '../activos/credito_web6.png';
-import imgCreditoWeb7 from '../activos/credito_web7.png';
-import imgCreditoWeb8 from '../activos/credito_web8.png';
-import imgCreditoWebCover from '../activos/credito_web.png';
+import imgCreditoWeb1 from '../activos/credito_web1.webp';
+import imgCreditoWeb2 from '../activos/credito_web2.webp';
+import imgCreditoWeb3 from '../activos/credito_web3.webp';
+import imgCreditoWeb4 from '../activos/credito_web4.webp';
+import imgCreditoWeb5 from '../activos/credito_web5.webp';
+import imgCreditoWeb6 from '../activos/credito_web6.webp';
+import imgCreditoWeb7 from '../activos/credito_web7.webp';
+import imgCreditoWeb8 from '../activos/credito_web8.webp';
+import imgCreditoWebCover from '../activos/credito_web.webp';
 
 export const informacionPersonal = {
   nombre: "Luis Balladares",
@@ -213,6 +213,11 @@ El sistema se conecta con la API RESTful en .NET 8 y procesa eventos en tiempo r
 Cada pago o solicitud registrada desde la aplicación emite una notificación transaccional procesada por la API en la nube, actualizando inmediatamente el estado de cobranza en el panel web administrativo sin necesidad de recargar la página.`,
         tecnologias: ["Flutter 3.x", "Dart", "Android", "Brevo SMTP", ".NET 8", "SignalR"],
         enlaces: { codigo: "https://github.com/luisknight24/GestionCreditos-Completo", demo: "https://luisknight24.github.io/GestionCreditos-Completo/" },
+        credenciales: {
+          correo: "luisknight1111@gmail.com",
+          contrasena: "Gestioncreditos1",
+          cedula: "0928374651"
+        },
         galeria: [
           imgCreditoMovil1,
           imgCreditoMovil2,

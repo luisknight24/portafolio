@@ -47,7 +47,7 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
         onClick={cerrarModal}
       >
         <motion.div
-          className={`modal-contenido ${esMovil ? 'modal-movil' : ''}`}
+          className={`modal-contenido ${esMovil ? 'modal-movil' : ''} ${esMovil ? (esHibrido ? 'modal-hibrido-movil' : 'modal-movil-puro') : ''}`}
           initial={{ y: 50, opacity: 0, scale: 0.95 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 20, opacity: 0, scale: 0.95 }}
@@ -94,12 +94,17 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
               </div>
             )}
 
-            {credencialesActuales && (
+            {!esMovil && credencialesActuales && (
               <div className="modal-credenciales-contenedor">
                 <h3 className="modal-subtitulo">Credenciales para acceso de prueba</h3>
                 <div className="modal-credenciales">
                   <p><strong>Correo:</strong> {credencialesActuales.correo}</p>
-                  <p><strong>Contraseña:</strong> {credencialesActuales.contrasena}</p>
+                  <p style={{ marginTop: '0.4rem' }}><strong>Contraseña:</strong> {credencialesActuales.contrasena}</p>
+                  {credencialesActuales.cedula && (
+                    <p style={{ marginTop: '0.4rem' }}>
+                      <strong>Cédula de tienda (Registro Sec. 3):</strong> {credencialesActuales.cedula}
+                    </p>
+                  )}
                 </div>
               </div>
             )}
@@ -131,6 +136,21 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
                 ))}
               </div>
 
+              {esMovil && credencialesActuales && (
+                <div className="modal-credenciales-contenedor" style={{ marginTop: '-0.5rem', marginBottom: '1.25rem' }}>
+                  <h3 className="modal-subtitulo">Credenciales para acceso de prueba</h3>
+                  <div className="modal-credenciales">
+                    <p><strong>Correo:</strong> {credencialesActuales.correo}</p>
+                    <p style={{ marginTop: '-0.4rem' }}><strong>Contraseña:</strong> {credencialesActuales.contrasena}</p>
+                    {credencialesActuales.cedula && (
+                      <p style={{ marginTop: '-0.5rem' }}>
+                        {/* <strong>Cédula de encargado de tienda (Para registro, sección 3):</strong> {credencialesActuales.cedula} */}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+
               <div className="modal-acciones">
                 {enlacesActuales.codigo && (
                   <a href={enlacesActuales.codigo} target="_blank" rel="noopener noreferrer" className="boton boton-secundario">
@@ -145,7 +165,7 @@ export const ModalProyecto: React.FC<ModalProyectoProps> = ({ proyecto, cerrarMo
               </div>
 
               {esMovil && (
-                <div className="modal-tecnologias-contenedor" style={{ marginTop: '0.4rem' }}>
+                <div className="modal-tecnologias-contenedor" style={{ marginTop: '0.2rem' }}>
                   <h3 className="modal-subtitulo">Tecnologías utilizadas</h3>
                   <div className="modal-tecnologias">
                     {tecnologiasActuales.map((tec: string, index: number) => (

@@ -593,7 +593,7 @@ a:hover {
 .modal-galeria {
   width: 100%;
   height: auto;
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/9;
   position: relative;
   background: #000;
 }

@@ -50,7 +50,7 @@ import imgCreditoWebCover from '../activos/credito_web.webp';
 export const informacionPersonal = {
   nombre: "Luis Balladares",
   cargo: "Ingeniero en Software",
-  descripcion: "Ing. en Software con formación y experiencia en el desarrollo de aplicaciones Full-Stack y móviles, así como en el diseño y optimización de bases de datos. Mi enfoque se centra en crear soluciones tecnológicas eficientes, mantenibles y orientadas a resultados, garantizando calidad en cada etapa del desarrollo.",
+  descripcion: "Ing. en Software con formación y experiencia en el desarrollo de aplicaciones Full-Stack, móviles y automatización de procesos, así como en el diseño y optimización de bases de datos. Mi enfoque se centra en crear soluciones tecnológicas eficientes, mantenibles y orientadas a resultados, garantizando calidad en cada etapa del desarrollo.",
   enlaces: {
     linkedin: "www.linkedin.com/in/luis-balladares",
     github: "https://github.com/luisknight24",
@@ -80,8 +80,13 @@ export const habilidades = [
   },
   {
     categoria: "Cloud y DevOps",
-    descripcion: "Implementación de infraestructura en la nube, gestión de flujos de tráfico y virtualización de entornos de desarrollo y producción.",
+    descripcion: "Implementación de infraestructura en la nube, gestión de flujos de tráfico y virtualización de entornos de desarrollo, producción y despliegue continuo.",
     tecnologias: ["AWS", "Firebase", "Docker", "API Gateway"]
+  },
+  {
+    categoria: "Automatización y Workflows",
+    descripcion: "Diseño de flujos de trabajo integrados, sincronización de sistemas mediante Webhooks y automatización de tareas repetitivas en entornos nube o servidor.",
+    tecnologias: ["n8n", "Webhooks & APIs REST", "GitHub Actions", "Python Scripts", "Brevo SMTP / Automatización de emails", "Cron Jobs", "Make"]
   },
   {
     categoria: "Herramientas y Testing",
@@ -194,7 +199,7 @@ El sistema emplea una arquitectura modular orientada a componentes, separando es
 
 El sistema se conecta con la API RESTful en .NET 8 y procesa eventos en tiempo real mediante SignalR. Al aprobar una solicitud o registrar un abono desde el dashboard, la información se persiste en PostgreSQL (Neon DB) y refresca al instante el saldo visible en la aplicación móvil del cliente.`,
         tecnologias: ["Angular 18", "TypeScript", ".NET 8", "PostgreSQL", "SignalR", "Render", "Docker"],
-        enlaces: { codigo: "https://github.com/luisknight24/GestionCreditos-Completo", demo: "https://luisknight24.github.io/GestionCreditos-Completo/" },
+        enlaces: { codigo: "https://github.com/luisknight24/GestionCreditos-Completo" },
         galeria: [
           imgCreditoWeb1,
           imgCreditoWeb2,

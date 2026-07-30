@@ -34,7 +34,7 @@ export const Proyectos: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Proyectos
+          Proyectos Destacados
         </motion.h2>
 
         <motion.div
